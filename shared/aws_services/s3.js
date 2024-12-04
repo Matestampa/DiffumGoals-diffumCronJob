@@ -14,6 +14,10 @@ if (AWS_S3_VARS.localEndpoint){
 }
 else{S3_ARGS.region=AWS_S3_VARS.bucketRegion;}
 
+//Add credentials
+S3_ARGS.credentials=AWS_S3_VARS.credentials
+
+
 const S3=new S3Client(S3_ARGS);
 
 const BUCKET_NAME=AWS_S3_VARS.bucketName;

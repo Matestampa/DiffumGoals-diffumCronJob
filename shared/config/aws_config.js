@@ -6,7 +6,11 @@ get_env();
 const AWS_S3_VARS={
     localEndpoint:process.env.S3_LOCAL_ENDPOINT,
     bucketRegion:process.env.S3_BUCKET_REGION,
-    bucketName:process.env.S3_BUCKET_NAME
+    bucketName:process.env.S3_BUCKET_NAME,
+    credentials:{
+        accessKeyId:process.env.S3_AWS_ACCESS_KEY_ID,
+        secretAccessKey:process.env.S3_AWS_SECRET_ACCESS_KEY
+    }
 }
 
 const AWS_SQS_VARS={
