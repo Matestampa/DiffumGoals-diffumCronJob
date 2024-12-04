@@ -1,3 +1,16 @@
+function getBufferAsync(img, mime) {
+    return new Promise((resolve, reject) => {
+        img.getBuffer(mime, (err, buffer) => {
+            if (err) {
+                console.error("Error en getBufferAsync:", err);
+                return reject(err);
+            }
+            resolve(buffer);
+        });
+    });
+}
+
+
 function get_randNum(minimo,maximo){
     minimo = Math.ceil(minimo);
     maximo = Math.floor(maximo);
@@ -27,4 +40,4 @@ function delete_arrElem(index,arr){
 }
 
 
-module.exports={get_randNum,get_pixelCoords,changePixel,delete_arrElem};
+module.exports={getBufferAsync,get_randNum,get_pixelCoords,changePixel,delete_arrElem};
